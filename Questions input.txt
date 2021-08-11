@@ -1,0 +1,48 @@
+1.Word Occurence
+
+	Map<String, Long> result = list.stream()
+            .collect(Collectors.groupingBy(Function.identity(),
+   
+            		Collectors.counting()));
+	
+	result.entrySet().forEach(value->System.out.println(value.getKey()+" Occured "+  value.getValue()+" Times "));	
+	
+	2.max numbers in array
+	
+	
+	int arr[] = {10, 324, 45, 90, 9808};
+	      
+	   
+	         int i;
+	          
+	         // Initialize maximum element
+	         int max = arr[0];
+	       
+	         // Traverse array elements from second and
+	         // compare every element with current max 
+	         for (i = 1; i < arr.length; i++)
+	             if (arr[i] > max)
+	                 max = arr[i];
+	       
+	        System.out.print(max);
+	
+	
+	3.Stream example
+	
+	List<Product> productsList = new ArrayList<Product>();  
+        //Adding Products  
+        productsList.add(new Product(1,"HP Laptop",25000f));  
+        productsList.add(new Product(2,"Dell Laptop",30000f));  
+        productsList.add(new Product(3,"Lenevo Laptop",28000f));  
+        productsList.add(new Product(4,"Sony Laptop",28000f));  
+        productsList.add(new Product(5,"Apple Laptop",90000f)); 
+        
+       List<Product> test= productsList.stream().filter(p-> p.price > 25000).collect(Collectors.toList());
+       List<Product> test1= productsList.stream().filter(p-> p.name.equals("Sony Laptop")).collect(Collectors.toList());
+       test1.stream().forEach(p->System.out.println(p.name));
+       test.stream().forEach(p->System.out.println(p.price));;
+       test1.forEach(t->System.out.println(t.name));
+	   
+	   4.sum of query for particular employee
+	   
+	   select sum(score) from score  as score where student_id=2;
